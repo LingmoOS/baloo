@@ -1,0 +1,33 @@
+Origin: https://invent.kde.org/frameworks/baloo/commit/95f3290e43bdf1124122320eacd510aa8803020c
+From: Nate Graham <nate@kde.org>
+Date: Wed, 17 Feb 2021 12:12:52 -0700
+Subject: [PATCH] Don't try to index .swp files
+ BUG: 433095
+ FIXED-IN: 5.80
+---
+ src/file/fileexcludefilters.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/file/fileexcludefilters.cpp b/src/file/fileexcludefilters.cpp
+index d2e649f1..97533aca 100644
+--- a/src/file/fileexcludefilters.cpp
++++ b/src/file/fileexcludefilters.cpp
+@@ -48,6 +48,7 @@ const char* const s_defaultFileExcludeFilters[] = {
+     "*.vm*",
+     "*.nvram",
+     "*.rcore",
++    "*.swp",
+     "*.swap",
+     "lzo",
+     "litmain.sh",
+@@ -94,7 +95,7 @@ const char* const s_defaultFileExcludeFilters[] = {
+     nullptr
+ };
+ 
+-const int s_defaultFileExcludeFiltersVersion = 6;
++const int s_defaultFileExcludeFiltersVersion = 7;
+ 
+ const char* const s_defaultFolderExcludeFilters[] = {
+     "po",
+-- 
+GitLab

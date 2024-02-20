@@ -1,0 +1,2 @@
+Disable-the-file-indexer-by-default.patch
+upstream_5.80_Dont_try_to_index_swp_files.patch
